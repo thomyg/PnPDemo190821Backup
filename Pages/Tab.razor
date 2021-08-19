@@ -92,6 +92,7 @@
             var photoStream = await graphClient.Me.Photo.Content.Request().GetAsync();
             var profile = await graphClient.Me.Request().GetAsync();
 
+            //TODO: don't forget to add the Team.ReadBasic.All scope to your Azure AD app!        
             var joinedTeams = await graphClient.Me.JoinedTeams
                             .Request()
                             .GetAsync();
