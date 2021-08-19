@@ -1,21 +1,25 @@
 @page "/config"
 @inject IJSRuntime jsRuntime
 
-<div class="config page" id ="tab config">
-        <h1>Tab Configuration</h1>
-        <p>
-            This is where you will add your tab configuration options the user 
-            can choose when the tab is added to your team/group chat.
-        </p>
+<div class="config page" id="tab config">
+    <h1>Tab Configuration</h1>
+    <p>
+        This is where you will add your tab configuration options the user
+        can choose when the tab is added to your team/group chat.
+    </p>
+    <p>
+        <label for="fname">Tab name:</label><br>
+        <input type="text" id="tabname" name="tname"><br>
+    </p>
 </div>
 
 @code {
     TeamsFx teamsfx;
 
-	protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         teamsfx = await TeamsFx.CreateTeamsFx(jsRuntime);
-        await teamsfx.LoadTabConfigJS();  
+        await teamsfx.LoadTabConfigJS();
     }
 
 }

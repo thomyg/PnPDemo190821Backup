@@ -6,8 +6,9 @@
 */
 microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
     const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
+    var tabName = document.getElementById("tabname").value;
     microsoftTeams.settings.setSettings({
-        "suggestedDisplayName": "My Tab",
+        "suggestedDisplayName": tabName,
         "entityId": "Test",
         "contentUrl": baseUrl + "/tab",
         "websiteUrl": baseUrl + "/tab"
